@@ -6,12 +6,12 @@ import org.junit.jupiter.api.Test;
 
 public class SimpleGetRequest {
 
-    String url="http://54.236.162.138:8000/api/spartans";
+    String url="http://18.204.14.176:8000/api/spartans";
 
     @Test
     public void test1(){
         // send a get request and save response inside the response object
-        Response response = RestAssured.get(url);
+        Response response = RestAssured.get(url);// coming from rest assured library
 
         // print response status code
         System.out.println(response.statusCode());
