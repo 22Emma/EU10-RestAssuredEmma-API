@@ -14,7 +14,7 @@ public abstract class SpartanTestBase  {
 //   save base url inside this variable so that we dont need to type each http method
         baseURI=ConfigurationReader.getProperty("spartanBaseUrl"); // getting from the configuration.properties
 
-        String dbUrl = "jdbc:oracle:thin:@18.204.7.238:1521:XE";
+        String dbUrl = "jdbc:oracle:thin:@54.87.214.139:1521:XE";
         String dbUsername = "SP";
         String dbPassword = "SP";
 
