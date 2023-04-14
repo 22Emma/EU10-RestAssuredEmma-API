@@ -143,7 +143,7 @@ public class SpartaPostRequestDemo extends SpartanTestBase {
                 .statusCode(201)
                 .contentType("application/json")
                 .body("success", is(expectedResponseMessage))
-                .extract().jsonPath().getInt("data.id");
+                .extract().jsonPath().getInt("data.id");// getting the id from the response
         System.out.println("idFromPost = " + idFromPost);
 
         //send a get request to id
@@ -151,7 +151,8 @@ public class SpartaPostRequestDemo extends SpartanTestBase {
                 .and().pathParam("id", idFromPost)
                 .when().get("/api/spartans/{id}")
                 .then().log().all().statusCode(200)
-                .extract().as(Spartan.class);
+                .extract().as(Spartan.class);// saved the response in POJO(converting Spartan class)
+        //                                                            JSON--> POJO   -> de-serialization
 
         assertThat(spartanPosted.getName(),is(spartan.getName()));
         assertThat(spartanPosted.getGender(),is(spartan.getGender()));
